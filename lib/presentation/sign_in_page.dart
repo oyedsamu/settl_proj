@@ -5,6 +5,8 @@ import 'package:settl_proj/blocs/loginbloc/login_bloc.dart';
 import 'package:settl_proj/data/repository.dart';
 import 'package:settl_proj/presentation/utils.dart';
 
+import 'loader.dart';
+
 class UserSignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -53,6 +55,12 @@ class _SignInPageState extends State<SignInPage> {
       },
       child: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, state) {
+          if (state is LoginLoadingState) {
+            Utils.showLog("_LoginScreenState", "LoginLoadingState: called");
+            return Loader(
+              widget: _mainLayout(),
+            );
+          }
           return _mainLayout();
         },
       ),
