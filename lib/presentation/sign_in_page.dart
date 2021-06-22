@@ -43,7 +43,9 @@ class _SignInPageState extends State<SignInPage> {
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
         if (state is VerifyOtpLoginErrorState) {
-          Utils.showLog("_LoginScreenState", "build: Error  $state");
+          Utils.showLog(
+              "_LoginScreenState", "build: Error ${state.errorMessage}");
+          Utils.showToast(state.errorMessage);
         } else if (state is VerifyOtpLoginSuccessState) {
           Utils.showLog("LoginState::::", "LOGIN SUCCESSFUL: called");
           Navigator.pushNamed(context, "/homepage");
@@ -151,11 +153,14 @@ class _SignInPageState extends State<SignInPage> {
                       SizedBox(
                         height: 80,
                       ),
-                      Text(
-                        "Forgot Password?",
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.w600),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
                       SizedBox(
                         height: 50,
