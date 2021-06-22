@@ -177,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                                     BorderRadius.all(Radius.circular(10))),
                             height: 60,
                             width: 40,
-                            child: const Text("Send Money"),
+                            child: Center(child: const Text("Send Money")),
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
                                     BorderRadius.all(Radius.circular(10))),
                             height: 60,
                             width: 40,
-                            child: const Text('Request Money'),
+                            child: Center(child: const Text('Request Money')),
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -195,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                                     BorderRadius.all(Radius.circular(10))),
                             height: 60,
                             width: 40,
-                            child: const Text('Create a Wallet'),
+                            child: Center(child: const Text('Create a Wallet')),
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -204,7 +204,8 @@ class _HomePageState extends State<HomePage> {
                                     BorderRadius.all(Radius.circular(10))),
                             height: 60,
                             width: 40,
-                            child: const Text('Upgrade your account'),
+                            child: Center(
+                                child: const Text('Upgrade your account')),
                           ),
                         ],
                       ),
